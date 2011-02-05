@@ -26,16 +26,16 @@ class TestRunner:
 		randomTall = randomGenerator.nextInt(400000)
 
         brukerNummer = TestDataGenerator.hentTilfeldigBrukerKontoNummer(randomTall)
-        print "Behandler bruker med brukernummer: " + brukerNummer
+        log("Behandler bruker med brukernummer: " + brukerNummer)
 
 		backdoorAktiveringsHeader = ( NVPair("brukerNummer", brukerNummer ), NVPair("brukerType", "49" ) )
         
         httpUtilities = HTTPPluginControl.getHTTPUtilities()
 
-        twitterTest = Test(901, "REST twittersoek")
+        twitterTest = Test(301, "REST twittersoek")
         twitterRequest = twitterTest.wrap(HTTPRequest(url=baseUrl, headers=backdoorAktiveringsHeader))
         
-        profilbildeTest = Test(902, "REST profilbilder")
+        profilbildeTest = Test(302, "REST profilbilder")
         profilbildeRequest = profilbildeTest.wrap(HTTPRequest(), headers=backdoorAktiveringsHeader)
         
         try:

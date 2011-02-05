@@ -14,10 +14,10 @@ class TestRunner:
         error = grinder.logger.error
         log = grinder.logger.output
             
-        twitterTest = Test(901, "REST twittersoek")
+        twitterTest = Test(201, "REST twittersoek")
         twitterRequest = twitterTest.wrap(HTTPRequest(url=baseUrl))
         
-        profilbildeTest = Test(902, "REST profilbilder")
+        profilbildeTest = Test(202, "REST profilbilder")
         profilbildeRequest = profilbildeTest.wrap(HTTPRequest())
         
         try:
